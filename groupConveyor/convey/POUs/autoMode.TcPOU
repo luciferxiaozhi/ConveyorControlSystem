@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="autoMode" Id="{ed7b9890-58eb-41e6-9bf7-b44b84283602}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK autoMode
+VAR_INPUT
+	ON : BOOL;
+	caseState : INT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	value : LREAL :=0;
+	onDelay : TON;
+	trigger : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF ON THEN
+//AutoMode runtime :P
+onDelay(IN:=I_bPieceLeftLift OR I_bPieceRightLift,pt:=T#2S,Q=>,ET=>);
+//POSITION(1-8).LEFTLIFesRIGHTLIFT(0,1)
+CASE caseState OF
+	0: //do nothing
+	21://1.0.1
+	leftBelt(1);
+	bottomBelt(1);
+	topBelt(0);
+	25: //1.0.0
+	leftBelt(1);
+	bottomBelt(1);
+	topBelt(0);
+	276://2.0.0 
+	leftBelt(0);
+	bottomBelt(1);
+	280://2.0.1
+	leftBelt(0);
+	rightLift(4);
+	bottomBelt(1);
+	topBelt(0);
+	292://2.1.0
+	leftBelt(0);
+	bottomBelt(1);
+	topBelt(0);
+	296://2.1.1
+	leftBelt(0);
+	rightLift(4);
+	bottomBelt(1);
+	topBelt(0);
+	84://3.0.0
+	rightBelt(1);
+	bottomBelt(1);
+	topBelt(0);
+	88://3.0.1
+	rightLift(4);
+	rightBelt(1);
+	bottomBelt(1);
+	topBelt(0);
+	100://3.1.0
+	rightBelt(1);
+	bottomBelt(1);
+	topBelt(0);
+	104://3.1.1
+	rightLift(4);
+	rightBelt(1);
+	bottomBelt(1);
+	topBelt(0);
+	
+	22://4.0.0
+	IF onDelay.Q THEN
+	rightbelt(0);
+	bottomBelt(0);
+	rightLift(3);
+	END_IF
+	38://4.1.0
+	IF onDelay.Q THEN
+	rightbelt(0);
+	bottomBelt(0);
+	rightLift(3);
+	END_IF
+	26://5.0.1
+	rightBelt(2);
+	topBelt(2);
+	bottomBelt(0);
+	42://5.1.1
+	rightBelt(2);
+	topBelt(2);
+	bottomBelt(0);
+	148://6.0.0
+	leftLift(3);
+	rightBelt(0);
+	topBelt(2);
+	bottomBelt(0);
+	152://6.0.1
+	leftLift(3);
+	rightBelt(0);
+	topBelt(2);
+	bottomBelt(0);
+	164://6.1.0
+	rightBelt(0);
+	topBelt(2);
+	bottomBelt(0);
+	168://6.1.1
+	rightBelt(0);
+	topBelt(2);
+	bottomBelt(0);
+	532://7.0.0
+	leftLift(3);
+	leftBelt(2);
+	topBelt(2);
+	bottomBelt(0);
+	536://7.0.1
+	leftLift(3);
+	leftBelt(2);
+	topBelt(2);
+	bottomBelt(0);
+	548://7.1.0
+	leftBelt(2);
+	topBelt(2);
+	bottomBelt(0);
+	552://7.1.1
+	leftBelt(2);
+	topBelt(2);
+	bottomBelt(0);
+	37://8.1.0
+	IF onDelay.Q THEN
+	leftBelt(0);
+	topBelt(0);
+	leftLift(4);
+	END_IF
+	41://8.1.1
+	IF onDelay.Q THEN
+	leftBelt(0);
+	topBelt(0);
+	leftLift(4);
+	END_IF
+END_CASE
+END_IF
+IF NOT ON AND NOT Main.allControls AND NOT MAIN.manualModeON THEN
+	leftBelt(0);
+	topBelt(0);
+	rightBelt(0);
+	bottomBelt(0);
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

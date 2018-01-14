@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <ImagePool Name="stateImages" Id="{0e356196-18cf-4afa-8a54-fdbebc57cf02}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="ImagePoolObject">
+          <v n="UniqueIdGenerator">"155"</v>
+          <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
+            <o>
+              <v n="BitmapID">"148"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\148.bmp"</v>
+              <v n="ItemID">79</v>
+            </o>
+            <o>
+              <v n="BitmapID">"21"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\21.bmp"</v>
+              <v n="ItemID">80</v>
+            </o>
+            <o>
+              <v n="BitmapID">"22"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\22.bmp"</v>
+              <v n="ItemID">81</v>
+            </o>
+            <o>
+              <v n="BitmapID">"24"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\24.bmp"</v>
+              <v n="ItemID">82</v>
+            </o>
+            <o>
+              <v n="BitmapID">"25"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\25.bmp"</v>
+              <v n="ItemID">83</v>
+            </o>
+            <o>
+              <v n="BitmapID">"26"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\26.bmp"</v>
+              <v n="ItemID">84</v>
+            </o>
+            <o>
+              <v n="BitmapID">"37"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\37.bmp"</v>
+              <v n="ItemID">85</v>
+            </o>
+            <o>
+              <v n="BitmapID">"38"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\38.bmp"</v>
+              <v n="ItemID">86</v>
+            </o>
+            <o>
+              <v n="BitmapID">"168"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\168.bmp"</v>
+              <v n="ItemID">87</v>
+            </o>
+            <o>
+              <v n="BitmapID">"41"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\41.bmp"</v>
+              <v n="ItemID">88</v>
+            </o>
+            <o>
+              <v n="BitmapID">"42"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\42.bmp"</v>
+              <v n="ItemID">89</v>
+            </o>
+            <o>
+              <v n="BitmapID">"84"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\84.bmp"</v>
+              <v n="ItemID">90</v>
+            </o>
+            <o>
+              <v n="BitmapID">"88"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\88.bmp"</v>
+              <v n="ItemID">91</v>
+            </o>
+            <o>
+              <v n="BitmapID">"100"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\100.bmp"</v>
+              <v n="ItemID">92</v>
+            </o>
+            <o>
+              <v n="BitmapID">"104"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\104.bmp"</v>
+              <v n="ItemID">93</v>
+            </o>
+            <o>
+              <v n="BitmapID">"164"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\164.bmp"</v>
+              <v n="ItemID">94</v>
+            </o>
+            <o>
+              <v n="BitmapID">"276"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\276.bmp"</v>
+              <v n="ItemID">95</v>
+            </o>
+            <o>
+              <v n="BitmapID">"280"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\280.bmp"</v>
+              <v n="ItemID">96</v>
+            </o>
+            <o>
+              <v n="BitmapID">"292"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\292.bmp"</v>
+              <v n="ItemID">97</v>
+            </o>
+            <o>
+              <v n="BitmapID">"296"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\296.bmp"</v>
+              <v n="ItemID">98</v>
+            </o>
+            <o>
+              <v n="BitmapID">"532"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\532.bmp"</v>
+              <v n="ItemID">99</v>
+            </o>
+            <o>
+              <v n="BitmapID">"536"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\536.bmp"</v>
+              <v n="ItemID">100</v>
+            </o>
+            <o>
+              <v n="BitmapID">"548"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\548.bmp"</v>
+              <v n="ItemID">101</v>
+            </o>
+            <o>
+              <v n="BitmapID">"552"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\Ilir\Dropbox\HumanMachineInterface\GW\GW\groupConveyor\Graphics\stateImages\552.bmp"</v>
+              <v n="ItemID">102</v>
+            </o>
+            <o>
+              <v n="BitmapID">""</v>
+              <v n="FileID">""</v>
+              <v n="ItemID">103</v>
+            </o>
+          </l>
+          <v n="GuidInit">{9b6ffdd6-2701-45c5-9676-2651caaf1374}</v>
+          <v n="GuidReInit">{403104b6-20db-4f31-a468-6a115f4955a7}</v>
+          <v n="GuidExitX">{4b4dc120-30bc-47bf-8dec-2dd2993eee0c}</v>
+          <v n="ValidIds">true</v>
+        </o>
+      </Data>
+      <TypeList>
+        <Type n="ArrayList">System.Collections.ArrayList</Type>
+        <Type n="Boolean">System.Boolean</Type>
+        <Type n="Guid">System.Guid</Type>
+        <Type n="ImagePoolItem">{215b2719-0347-4e4d-ba85-8bcd66946f66}</Type>
+        <Type n="ImagePoolObject">{bb0b9044-714e-4614-ad3e-33cbdf34d16b}</Type>
+        <Type n="Int32">System.Int32</Type>
+        <Type n="String">System.String</Type>
+      </TypeList>
+    </XmlArchive>
+  </ImagePool>
+</TcPlcObject>

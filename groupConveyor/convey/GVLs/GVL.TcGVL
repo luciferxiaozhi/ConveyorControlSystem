@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <GVL Name="GVL" Id="{64e2fd87-9b6f-4c7a-b3ae-8a143f31cadc}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	I_bPieceLeftLift              AT %I*: BOOL; // DI 1 - Piece in the left lift
+	I_bPieceRightLift             AT %I*: BOOL; // DI 2 - Piece in the right lift
+	I_bRightLiftBottom            AT %I*: BOOL; // DI 3 - Right lift is bottom
+	I_bRightLiftUp                AT %I*: BOOL; // DI 4 - Right lift is up
+	I_bLeftLiftBottom             AT %I*: BOOL; // DI 5 - Left lift is down
+	I_bLeftLiftUp                 AT %I*: BOOL; // DI 6 - Left lift is up
+	I_bLowBeltRight 	          AT %I*: BOOL; // DI 7 - Piece on low belt right side
+	I_bTopBeltRight               AT %I*: BOOL; // DI 8 - Piece on top belt right side
+	I_bLowBeltLeft                AT %I*: BOOL; // DI 9 - Piece on low belt left side
+	I_bTopBeltleft                AT %I*: BOOL; // DI 10 - Piece on top belt left side
+	I_bInput11                    AT %I*: BOOL; // DI 11 - Empty
+	I_bInput12                    AT %I*: BOOL; // DI 12 - Empty
+	I_STARTbutton				  AT %I*: BOOL;
+	
+	O_bLeftLiftUp                 AT %Q*: BOOL; // DO 1 - Left Lift up
+	O_bLeftLiftDown               AT %Q*: BOOL; // DO 2 - Left Lift down
+	O_bRightLiftDown              AT %Q*: BOOL; // DO 3 - Right Lift down
+	O_bRightLiftUp                AT %Q*: BOOL; // DO 4 - Right Lift up
+	O_bRightLiftBeltLeft          AT %Q*: BOOL; // DO 5 - Lift Right belt left
+	O_bRightLiftBeltRight         AT %Q*: BOOL; // DO 6 - Lift Right belt right
+	O_bLeftLiftBeltRight          AT %Q*: BOOL; // DO 7 - Lift Left belt right
+	O_bLeftLiftBeltLeft           AT %Q*: BOOL; // DO 8 - Lift Left belt left
+	O_bTopBeltLeft                AT %Q*: BOOL; // DO 9 - Top belt left
+	O_bLowBeltRight               AT %Q*: BOOL; // DO 10 - Low belt right
+	O_bTopBeltRight               AT %Q*: BOOL; // DO 11 - Top belt right
+	O_bLowBeltLeft                AT %Q*: BOOL; // DO 12 - Low belt left
+	Delay2:ton;
+	state: INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

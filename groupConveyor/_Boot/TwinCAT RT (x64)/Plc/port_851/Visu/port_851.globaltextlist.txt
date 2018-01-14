@@ -1,0 +1,36 @@
+Id;Default
+32;$"%d$", state
+34;%d
+3;auto control
+5;Auto control
+33;autoMode.state
+13;Back
+15;Belt
+24;Belt left
+25;Belt right
+1;GROUP 7
+0;GROUP NAME
+10;HAMEED QUREEB
+9;Ilir M Kokollari
+11;ILIR M KOKOLLARI
+14;Left lift
+31;Left lift Menu
+27;Lift down
+29;Lift left
+30;Lift right
+26;Lift up
+18;Low Belt
+21;Low left
+23;Low right
+2;Mannual control
+12;Manual control
+4;Quit
+16;Right lift
+28;Right lift Menu
+6;TOBILOBA ERO
+17;Top Belt
+19;Top left
+20;Top Right
+22;Top right
+8;WILPPU AHONEN
+7;ZHILUN CHANG

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="topBelt" Id="{c4845a2a-729a-4991-bf08-81e4f6081550}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION topBelt : BOOL
+VAR_INPUT
+	direction: INT := 0;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//The variable <direction> conventionaly can be initialized with the values:
+//0 meaning STOP
+//1 meaning RIGHT
+//2 meaning LEFT
+//3 meaning UP
+//4 meaning DOWN
+CASE direction OF
+	0:
+	O_bTopBeltLeft:=FALSE;
+	O_bTopBeltRight:=FALSE;	
+	1:
+	O_bTopBeltLeft:=FALSE;
+	O_bTopBeltRight:=TRUE;
+	2:
+	O_bTopBeltRight:=FALSE;
+	O_bTopBeltLeft:=TRUE;
+	
+	ELSE
+	O_bTopBeltLeft:=FALSE;
+	O_bTopBeltRight:=FALSE;	
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

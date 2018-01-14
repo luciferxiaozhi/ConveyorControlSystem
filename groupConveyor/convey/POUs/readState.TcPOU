@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="readState" Id="{fb5a27da-6a41-4333-88c4-8146d9e48df3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK readState
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+	caseState : INT;
+END_VAR
+VAR
+	counter : INT;
+	value : LREAL;
+	state : LREAL;
+	inputArray: ARRAY[0..9] OF BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[inputArray[0]:=I_bPieceLeftLift;
+inputArray[1]:=I_bPieceRightLift;
+inputArray[2]:=I_bRightLiftBottom;
+inputArray[3]:=I_bRightLiftUp;
+inputArray[4]:=I_bLeftLiftBottom;
+inputArray[5]:=I_bLeftLiftUp;
+inputArray[6]:=I_bLowBeltRight;
+inputArray[7]:=I_bTopBeltRight;
+inputArray[8]:=I_bLowBeltLeft;
+inputArray[9]:=I_bTopBeltleft;
+
+FOR counter :=0 TO 9 BY 1 DO
+	IF inputArray[counter] THEN
+		value := value + EXPT(2, counter);
+	END_IF
+END_FOR
+state := value;
+value := 0;
+counter :=0;
+caseState := LREAL_TO_INT(state);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

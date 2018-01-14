@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="caseImageUpdate" Id="{b6d18e67-bb4e-408b-884b-0482f3257f5a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK caseImageUpdate
+VAR_INPUT
+	id:INT;
+END_VAR
+VAR_OUTPUT
+	bmpId:STRING;
+	manualStateId:INT;
+	indusoftImage:STRING;
+END_VAR
+VAR
+	btn1:BOOL;
+	btn2:BOOL;
+	btn3:BOOL;
+	btn4:BOOL;
+	btn5:BOOL;
+	btn6:BOOL;
+	btn7:BOOL;
+	btn8:BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF id = 21 OR id =22 OR id = 24 OR id = 25 OR id = 26 OR id = 37 OR id = 38 OR id = 41 OR id = 42 OR id = 84 OR id = 88 OR id = 100 OR id = 104 OR id = 148 OR id = 164 OR id=168 OR id = 276 OR id = 280 OR id = 292 OR id = 296 OR id = 532 OR id = 536 OR id = 548 OR id = 552 THEN
+	bmpId:=concat('stateImages.',INT_TO_STRING(id));
+	indusoftImage:=concat(INT_TO_STRING(id), '.jpg');
+	manualStateId:=id;
+
+CASE id OF
+	37, 41:
+	btn1:=TRUE;
+	btn2:=FALSE;
+	btn3:=TRUE;
+	btn4:=TRUE;
+	btn5:=TRUE;
+	btn6:=TRUE;
+	btn7:=FALSE;
+	btn8:=TRUE;
+	532, 536, 548, 552:
+	btn1:=FALSE;
+	btn2:=FALSE;
+	btn3:=TRUE;
+	btn4:=TRUE;
+	btn5:=TRUE;
+	btn6:=TRUE;
+	btn7:=TRUE;
+	btn8:=TRUE;
+	168, 164, 148, 24:
+	btn1:=FALSE;
+	btn2:=FALSE;
+	btn3:=TRUE;
+	btn4:=TRUE;
+	btn5:=TRUE;
+	btn6:=TRUE;
+	btn7:=TRUE;
+	btn8:=TRUE;
+	26, 42:
+	btn1:=FALSE;
+	btn2:=TRUE;
+	btn3:=TRUE;
+	btn4:=FALSE;
+	btn5:=TRUE;
+	btn6:=TRUE;
+	btn7:=TRUE;
+	btn8:=TRUE; 
+	22, 38:
+	btn1:=TRUE;
+	btn2:=TRUE;
+	btn3:=FALSE;
+	btn4:=TRUE;
+	btn5:=TRUE;
+	btn6:=FALSE;
+	btn7:=TRUE;
+	btn8:=TRUE;
+	84, 88, 100, 104:
+	btn1:=TRUE;
+	btn2:=TRUE;
+	btn3:=TRUE;
+	btn4:=TRUE;
+	btn5:=FALSE;
+	btn6:=FALSE;
+	btn7:=TRUE;
+	btn8:=TRUE;
+	276, 280, 292, 296:
+	btn1:=TRUE;
+	btn2:=TRUE;
+	btn3:=TRUE;
+	btn4:=TRUE;
+	btn5:=FALSE;
+	btn6:=FALSE;
+	btn7:=TRUE;
+	btn8:=TRUE;
+	25, 21:
+	btn1:=TRUE;
+	btn2:=TRUE;
+	btn3:=TRUE;
+	btn4:=TRUE;
+	btn5:=FALSE;
+	btn6:=TRUE;
+	btn7:=TRUE;
+	btn8:=FALSE;
+	
+	
+END_CASE
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

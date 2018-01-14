@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="rightLift" Id="{f90afe62-a973-40b9-9f1a-87982473ebd6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION rightLift : BOOL
+VAR_INPUT
+	direction : INT :=0;
+END_VAR
+VAR
+	//onDelay : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//The variable <direction> conventionaly can be initialized with the values:
+//0 meaning STOP
+//1 meaning RIGHT
+//2 meaning LEFT
+//3 meaning UP
+//4 meaning DOWN
+CASE direction OF
+	0:
+	O_bRightLiftUp:=FALSE;
+	O_bRightLiftDown:=FALSE;	
+	3:
+	O_bRightLiftDown:=FALSE;
+	O_bRightLiftUp:=TRUE;
+	//onDelay(IN:=TRUE,PT=T#2S,Q=>O_bRightLiftUp,ET=>);
+	4:
+	O_bRightLiftUp:=FALSE;
+	O_bRightLiftDown:=TRUE;
+	//onDelay(IN:=TRUE,PT=T#2S,Q=>O_bRightLiftDown,ET=>);	
+	
+	ELSE
+	O_bLeftLiftUp:=FALSE;
+	O_bLeftLiftDown:=FALSE;	
+END_CASE
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="relaxPistons" Id="{c9fadeb7-dc15-454c-b494-4cd261c8c5e7}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK relaxPistons
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF I_bRightLiftBottom THEN
+	O_bRightLiftDown:=FALSE;
+END_IF
+
+IF  I_bRightLiftUp THEN
+	O_bRightLiftUp:=FALSE;
+END_IF
+
+IF I_bLeftLiftBottom THEN
+	O_bLeftLiftDown:=FALSE;
+END_IF
+
+IF  I_bLeftLiftUp THEN
+	O_bLeftLiftUp:=FALSE;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

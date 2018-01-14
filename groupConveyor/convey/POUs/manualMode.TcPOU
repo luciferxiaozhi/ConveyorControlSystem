@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.2">
+  <POU Name="manualMode" Id="{e4c48706-fba3-40a4-aae0-da30c570095e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK manualMode
+VAR_INPUT
+	ON : BOOL;
+	toState: INT;
+	cState: INT;
+END_VAR
+VAR_OUTPUT
+	prevState : INT := 1;
+END_VAR
+VAR
+	onDelay : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF ON THEN
+
+CASE toState OF
+	1:
+	IF prevState = 2 THEN
+		topBelt(2);
+		leftBelt(2);
+		leftLift(3);
+	END_IF
+	
+	IF prevState = 8 THEN
+		leftLift(3);
+	END_IF
+		prevState := 1;	
+		
+	2:
+	IF prevState = 1 THEN
+		topBelt(1);
+		leftBelt(1);
+	END_IF
+	
+	IF prevState = 3 THEN
+		topBelt(2);
+	END_IF
+	prevState := 2;
+	
+	3:
+	IF prevState = 2 THEN
+		topBelt(1);
+	END_IF
+	
+	IF prevState = 4 THEN
+		topBelt(2);
+		rightBelt(2);
+	END_IF
+	prevState := 3;
+	
+	4:
+	IF prevState = 3 THEN
+		topBelt(1);
+		rightBelt(1);
+		rightLift(3);
+	END_IF
+	
+	IF prevState = 5 THEN
+		rightLift(3);
+	END_IF
+	prevState := 4;
+	
+	5:
+	IF prevState = 4 THEN
+		rightLift(4);
+	END_IF
+	
+	IF prevState = 6 THEN
+		bottomBelt(1);
+		rightBelt(1);
+		rightLift(4);
+	END_IF
+	prevState := 5;
+	
+	6:
+	IF prevState = 5 THEN
+		bottomBelt(2);
+		rightBelt(2);
+	END_IF
+	
+	IF prevState = 7 THEN
+		bottomBelt (1);
+	END_IF
+	prevState := 6;
+	
+	7:
+	IF prevState = 6 THEN
+		bottomBelt(2);
+	END_IF
+	
+	IF prevState = 8 THEN
+		bottomBelt(1);
+		leftBelt(1);
+	END_IF
+	prevState := 7;
+	
+	8:
+	IF prevState = 1 THEN
+		leftLift(4);
+	END_IF
+	
+	IF prevState = 7 THEN
+		bottomBelt(2);
+		leftBelt(2);
+		leftLift(4);
+	END_IF
+	prevState := 8;
+	
+END_CASE
+
+IF toState=2 AND (cState=552 OR cState=536 OR cState=532 OR cState=548) THEN
+	topBelt(0);
+	leftBelt(0);
+END_IF
+
+IF toState=3 AND (cState=168 OR cState=152 OR cState=148 OR cState=164) THEN
+	topBelt(0);
+	rightBelt(0);
+END_IF
+
+IF toState=6 AND (cState=104 OR cState=88 OR cState=84 OR cState=100) THEN
+	bottomBelt(0);
+	rightBelt(0);
+END_IF
+
+IF toState=7 AND (cState=296 OR cState=292 OR cState=276 OR cState=280) THEN
+	bottomBelt(0);
+	leftBelt(0);
+END_IF
+
+onDelay(IN:=(toState = 1 AND (cState = 41 OR cState=37)) OR (toState = 4 AND (cState = 42 OR cState=26)) OR (toState = 5 AND (cState = 38 OR cState=22)) OR (toState = 8 AND (cState = 21 OR cState=25)),PT:=T#2S,Q=>,ET=>);
+//onDelay(IN:=toState = 2 AND (cState = 42 OR cState=26),PT:=T#2S,Q=>,ET=>);
+//onDelay(IN:=toState = 5 AND (cState = 38 OR cState=22),PT:=T#2S,Q=>,ET=>);
+//onDelay(IN:=toState = 8 AND (cState = 21 OR cState=25),PT:=T#2S,Q=>,ET=>);
+IF onDelay.Q THEN
+	bottomBelt(0);
+	topBelt(0);
+	rightBelt(0);
+	leftBelt(0);
+END_IF
+
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
